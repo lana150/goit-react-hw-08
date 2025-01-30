@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux"; 
 import { addContact } from "../../redux/contactsOps";
 import { selectContacts } from "../../redux/contactsSelectors";
 import { ErrorMessage, Field, Form, Formik } from "formik";
@@ -14,7 +14,7 @@ const ContactForm = () => {
 
   const handleSubmit = (values, options) => {
     if (contacts.some((contact) => contact.name === values.name)) {
-      alert(`${values.name} Is already in contacts!`);
+      alert(`${values.name} is already in contacts!`);
       return;
     }
 
@@ -28,7 +28,7 @@ const ContactForm = () => {
       .max(50, "Too Long!")
       .required("Required"),
     number: Yup.string()
-      .min(9, "Invalid phone number format")
+      .matches(/^\+?\d{9,15}$/, "Invalid phone number format") 
       .required("Required"),
   });
 
@@ -44,13 +44,15 @@ const ContactForm = () => {
           <Field className={s.inputForm} type="text" name="name" id={nameId} />
           <ErrorMessage className={s.error} name="name" component="span" />
         </label>
+
         <label className={s.labelForm} htmlFor={numberId}>
           <span className={s.spanForm}>Number</span>
           <Field
             className={s.inputForm}
             type="text"
-            name="numder"
+            name="number" 
             id={numberId}
+            placeholder="+123456789" 
           />
           <ErrorMessage className={s.error} name="number" component="span" />
         </label>

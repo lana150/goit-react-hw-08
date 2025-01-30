@@ -1,32 +1,27 @@
 import { FaUser, FaPhoneAlt } from "react-icons/fa"; 
 import { useSelector, useDispatch } from "react-redux";
 import { deleteContact } from "../../redux/contactsOps";
-import { selectContacts } from "../../redux/contactsSelectors";
+import { selectFilteredContacts } from "../../redux/contactsSelectors"; // Використовуємо правильний селектор
 import s from "./ContactList.module.css";
 
 const ContactList = () => {
-  const contacts = useSelector(selectContacts);
-  const filter = useSelector(state => state.filters.name) ?? "";
+  const contacts = useSelector(selectFilteredContacts); // Використовуємо відфільтровані контакти
   const dispatch = useDispatch();
-
-  const filteredContacts = contacts?.filter(contact =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
-  );
 
   return (
     <>
-      {contacts?.length > 0 ? (
+      {contacts.length > 0 ? (
         <ul className={s.list}>
-          {filteredContacts.map(({ id, name, number }) => (
+          {contacts.map(({ id, name, number }) => (
             <li key={id} className={s.listItem}>
-  <div className={s.wrapper}>
-    <p><FaUser /> {name}</p>
-    <p><FaPhoneAlt /> {number}</p>
-  </div>
-  <button onClick={() => dispatch(deleteContact(id))} className={s.button}>
-    Delete
-  </button>
-</li>     
+              <div className={s.wrapper}>
+                <p><FaUser /> {name}</p>
+                <p><FaPhoneAlt /> {number}</p>
+              </div>
+              <button onClick={() => dispatch(deleteContact(id))} className={s.button}>
+                Delete
+              </button>
+            </li>
           ))}
         </ul>
       ) : (

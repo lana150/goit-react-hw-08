@@ -5,7 +5,7 @@ import ContactList from "./components/ContactList/ContactList";
 import SearchBox from "./components/SearchBox/SearchBox";
 import { fetchContacts } from "./redux/contactsOps";
 import { selectLoading, selectError } from "./redux/contactsSelectors";
-import "./App.css"; // Стилі залишаємо без змін
+import "./App.css"; 
 
 const App = () => {
   const dispatch = useDispatch();
@@ -29,24 +29,3 @@ const App = () => {
 };
 
 export default App;
-
-
-
-
-/*import ContactsForm from "./components/ContactForm/ContactForm";
-import ContactList from "./components/ContactList/ContactList";
-import SearchBox from "./components/SearchBox/SearchBox";
-import "./App.css";
-
-const App = () => {
-  return (
-    <div>
-      <h1>Phonebook</h1>
-      <ContactsForm />
-      <SearchBox />
-      <ContactList />
-    </div>
-  );
-};
-
-export default App;*/
