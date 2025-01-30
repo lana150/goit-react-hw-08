@@ -7,8 +7,23 @@
 
 .listItem {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 8px;
     width: 380px;
     border: 2px solid rgb(0, 0, 0);
     border-radius: 5px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.button {
+    margin-left: auto;
+    border-color: rgb(133, 130, 130);
+    background-color: rgb(235, 235, 232);
+    color: rgb(54, 52, 52);
 }
