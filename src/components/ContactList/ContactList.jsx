@@ -1,7 +1,7 @@
 import { FaUser, FaPhoneAlt } from "react-icons/fa"; 
 import { useSelector, useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contactsOps";
-import { selectFilteredContacts } from "../../redux/contactsSelectors"; // Використовуємо правильний селектор
+import { deleteContact } from "../../redux/contacts/operations";
+import { selectFilteredContacts } from "../../redux/contacts/selectors"; // Використовуємо правильний селектор
 import s from "./ContactList.module.css";
 
 const ContactList = () => {

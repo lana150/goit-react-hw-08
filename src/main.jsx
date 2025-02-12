@@ -1,6 +1,30 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import { store, persistor } from "./redux/store";
+import { BrowserRouter } from "react-router-dom"; // ✅ Має бути
+import App from "./App";
+import "./index.css";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <BrowserRouter> {/* ✅ Має обгортати App */}
+          <App />
+        </BrowserRouter>
+      </PersistGate>
+    </Provider>
+  </React.StrictMode>
+);
+
+
+
+
+/*import React from "react";
+import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import App from "./App";
 import "./index.css"; // Якщо є глобальні стилі
@@ -11,7 +35,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <App />
     </Provider>
   </React.StrictMode>
-);
+);*/
 
 
 /*import React from "react";
