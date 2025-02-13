@@ -1,12 +1,15 @@
-import styles from "./HomePage.module.css";
+import s from "./HomePage.module.css";
 
 const HomePage = () => {
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Welcome to the Contact Book!</h1>
-      <p className={styles.subtitle}>Save and manage your contacts easily.</p>
+    <div className={s.homeContainer}>
+      <div className={s.textBox}>
+        <h1 className={s.title}>Welcome to the Phonebook App!</h1>
+        <p className={s.subtitle}>Manage your contacts easily and efficiently.</p>
+      </div>
     </div>
   );
 };
 
 export default HomePage;
+

@@ -1,0 +1,54 @@
+.homeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #F0F4F8;
+    /* Світло-сіро-блакитний фон */
+}
+
+.textBox {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    border: 3px solid #2C3E50;
+    /* Темно-синя рамка */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2C3E50;
+    /* Заголовок темно-синього кольору */
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    color: #333;
+    max-width: 500px;
+}
+
+/* 📱 Адаптація для мобільних пристроїв */
+@media (max-width: 768px) {
+    .textBox {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+    }
+}

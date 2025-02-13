@@ -1,4 +1,4 @@
-/*import LoginForm from "../../components/LoginForm/LoginForm";
+import LoginForm from "../../components/LoginForm/LoginForm";
 import styles from "./LoginPage.module.css";
 
 const LoginPage = () => {
@@ -10,4 +10,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;*/
+export default LoginPage;

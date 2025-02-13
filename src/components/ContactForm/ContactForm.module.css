@@ -1,61 +1,38 @@
-.ContactForm {
+.form {
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    width: 360px;
-    height: 300px;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    border: 2px solid #0a0a0a;
-    border-radius: 5px;
-    padding: 15px;
-
+    gap: 12px;
+    margin-bottom: 20px;
 }
 
-.labelForm {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    color: red;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
+.label {
+    font-weight: bold;
 }
 
-.spanForm {
-    font-size: 18px;
-    font-weight: 500;
-    color: black;
-    text-align: left;
-}
-
-.inputForm {
-    border: 1px solid #8d8a8a;
+.field {
+    padding: 8px;
     border-radius: 4px;
-    width: 264px;
-    height: 40px;
-    background-color: transparent;
-    font-size: 12px;
-    line-height: 2;
-    letter-spacing: 0.04em;
-    padding-left: 16px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    color: #000;
+    border: 1px solid #dfe1e5;
+    font-size: 16px;
+    width: 100%;
 }
 
-.btnForm {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    border-color: rgb(133, 130, 130);
-    background-color: rgb(235, 235, 232);
-    color: rgb(54, 52, 52);
-    font-size: 18px;
-    font-weight: 500;
-    border-radius: 5px;
-    width: 145px;
-    height: 30px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }

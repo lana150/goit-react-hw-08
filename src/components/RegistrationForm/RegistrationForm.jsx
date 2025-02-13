@@ -1,23 +1,24 @@
-/*import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
-import { useDispatch } from "react-redux";
-import { register } from "../../redux/auth/operations";
-import styles from "./RegistrationForm.module.css";
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import { useDispatch } from 'react-redux';
+import { register } from '../../redux/auth/operations';
+import s from './RegistrationForm.module.css';
+
+const validationSchema = Yup.object({
+  name: Yup.string()
+    .min(2, 'Name must be at least 2 characters')
+    .max(50, 'Name must be at most 50 characters')
+    .required('Name is required'),
+  email: Yup.string()
+    .email('Invalid email format')
+    .required('Email is required'),
+  password: Yup.string()
+    .min(6, 'Password must be at least 6 characters')
+    .required('Password is required'),
+});
 
 const RegistrationForm = () => {
   const dispatch = useDispatch();
-
-  const initialValues = {
-    name: "",
-    email: "",
-    password: "",
-  };
-
-  const validationSchema = Yup.object({
-    name: Yup.string().min(3, "Too short!").required("Required"),
-    email: Yup.string().email("Invalid email format").required("Required"),
-    password: Yup.string().min(6, "Too short!").required("Required"),
-  });
 
   const handleSubmit = (values, { resetForm }) => {
     dispatch(register(values));
@@ -25,27 +26,28 @@ const RegistrationForm = () => {
   };
 
   return (
-    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
-      <Form className={styles.form}>
-        <label className={styles.label}>
+    <Formik
+      initialValues={{ name: '', email: '', password: '' }}
+      validationSchema={validationSchema}
+      onSubmit={handleSubmit}
+    >
+      <Form className={s.form}>
+        <label className={s.label}>
           Name
-          <Field className={styles.input} type="text" name="name" />
-          <ErrorMessage className={styles.error} name="name" component="div" />
+          <Field name="name" type="text" className={s.input} />
+          <ErrorMessage name="name" component="div" className={s.error} />
         </label>
-
-        <label className={styles.label}>
+        <label className={s.label}>
           Email
-          <Field className={styles.input} type="email" name="email" />
-          <ErrorMessage className={styles.error} name="email" component="div" />
+          <Field name="email" type="email" className={s.input} />
+          <ErrorMessage name="email" component="div" className={s.error} />
         </label>
-
-        <label className={styles.label}>
+        <label className={s.label}>
           Password
-          <Field className={styles.input} type="password" name="password" />
-          <ErrorMessage className={styles.error} name="password" component="div" />
+          <Field name="password" type="password" className={s.input} />
+          <ErrorMessage name="password" component="div" className={s.error} />
         </label>
-
-        <button className={styles.button} type="submit">
+        <button type="submit" className={s.button}>
           Register
         </button>
       </Form>
@@ -53,4 +55,4 @@ const RegistrationForm = () => {
   );
 };
 
-export default RegistrationForm;*/
+export default RegistrationForm;

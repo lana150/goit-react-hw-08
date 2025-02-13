@@ -1,4 +1,4 @@
-/*import RegisterForm from "../../components/RegistrationForm/RegistrationForm";
+import RegisterForm from "../../components/RegistrationForm/RegistrationForm";
 import styles from "./RegisterPage.module.css";
 
 const RegisterPage = () => {
@@ -10,4 +10,4 @@ const RegisterPage = () => {
   );
 };
 
-export default RegisterPage;*/
+export default RegisterPage;
