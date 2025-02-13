@@ -22,7 +22,7 @@
 }
 
 .button {
-    background-color: #ff6b6b;
+    background-color:#e4878799;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -32,7 +32,7 @@
 }
 
 .button:hover {
-    background-color: #ff5252;
+    background-color: #c46e7083;
 }
 
 .button:disabled {
