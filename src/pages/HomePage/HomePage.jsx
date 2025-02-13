@@ -1,15 +1,13 @@
-import s from "./HomePage.module.css";
+import s from './HomePage.module.css';
 
-const HomePage = () => {
-  return (
-    <div className={s.homeContainer}>
-      <div className={s.textBox}>
-        <h1 className={s.title}>Welcome to the Phonebook App!</h1>
-        <p className={s.subtitle}>Manage your contacts easily and efficiently.</p>
-      </div>
+const HomePage = () => (
+  <div className={s.homePage}>
+    <h1 className={s.title}>Welcome to Phonebook App</h1>
+    <p className={s.description}>
+      Manage your contacts efficiently and securely.
+    </p>
     </div>
-  );
-};
+    
+);
 
 export default HomePage;
-
